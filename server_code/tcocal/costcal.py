@@ -1,27 +1,32 @@
 import anvil.server
 import os
 import json
+import requests
 
 def load_json_data(path):
-    f = open(path)
-    data = json.load(f)
-    f.close()
+    # f = open(path)
+    # data = json.load(f)
+    # f.close()
+    response = requests.get(path)
+    data = json.loads(response.text) 
     return data
+  
 
 # get supported regions based on ec2 price json file
 @anvil.server.callable
 def get_supported_regions():
     # assume the price folder is under same dir with the costcal.py
     #ec2_price_path = os.path.dirname(os.path.abspath(__file__)) + r"/price/ec2-price.json"
-    ec2_price_path = os.path.dirname(os.path.abspath(__file__)) + r"/price/ec2-price.json"
+    ec2_price_path = anvil.server.get_app_origin() + r"/_/theme/price/ec2-price.json"
     data = load_json_data(ec2_price_path)
     supported_regions = [key for key in data]
     return supported_regions
 
 # get supported instance type based on ec2 price json file and aws region inpu from users
+@anvil.server.callable
 def get_supported_instance_types(aws_region):
     # assume the price folder is under same dir with the costcal.py
-    ec2_price_path = os.path.dirname(os.path.abspath(__file__)) + r"/price/ec2-price.json"
+    ec2_price_path = anvil.server.get_app_origin() + r"/_/theme/price/ec2-price.json"
     data = load_json_data(ec2_price_path)
     supported_instance_types = [key for key in data[aws_region]]
     return supported_instance_types
