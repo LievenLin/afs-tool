@@ -106,7 +106,7 @@ components:
       properties: {text: 'Select an Amazon EC2 payment options:'}
       type: Label
       layout_properties: {grid_position: 'DYTOGP,ALAQYT'}
-    - name: drop_down_9
+    - name: drop_down_payment_option
       properties: {}
       type: DropDown
       layout_properties: {grid_position: 'XPXRNZ,HPSZVO'}
@@ -116,7 +116,7 @@ components:
       type: Label
       layout_properties: {grid_position: 'DOLITN,SFSEAD'}
     - name: text_box_2
-      properties: {}
+      properties: {type: number, placeholder: '1.6'}
       type: TextBox
       layout_properties: {grid_position: 'VHGBXJ,PLHBQZ'}
     - name: button_cal

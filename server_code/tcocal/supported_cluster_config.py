@@ -8,8 +8,8 @@ import anvil.server
 def get_supported_cluster_node_amount(onefs_version):
     supported_cluster_config_path = anvil.server.get_app_origin() + r"/_/theme/price/supported_cluster_config.json"
     data = costcal.load_json_data(supported_cluster_config_path)
-    supported_cluster_node_amount = data[onefs_version]
-    return ['4', '5', '6']
+    supported_cluster_node_amount = data[onefs_version]["cluster-node-amount"]
+    return supported_cluster_node_amount
 
 @anvil.server.callable
 def get_supported_node_disk_amount(onefs_version, disk_type):
