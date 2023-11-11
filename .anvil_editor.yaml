@@ -6,6 +6,7 @@ unique_ids:
     ClientPackage1: '1699683475908812439980804.4185'
   server_modules:
     tcocal: '1699683416681361379154475.6138'
+    tcocal.costcal: TWFDXRBGGLDFL3BAWYDD3XHP4726FGMX
   assets:
     price_loader.py: '169968338031360410131901.33327'
     standard-page.html: RCMG4SU2U7A2DDOKZ3FPF6UEPOSB4NPZ
