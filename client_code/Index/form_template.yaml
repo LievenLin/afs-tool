@@ -98,7 +98,7 @@ components:
       properties: {text: 'Select the desired raw size of each data disk. (TiB):'}
       type: Label
       layout_properties: {grid_position: 'UEPSNP,DZQZHY'}
-    - name: text_box_1
+    - name: text_box_node_disk_size
       properties: {type: number}
       type: TextBox
       layout_properties: {grid_position: 'MKDCYM,EMIRSR'}
@@ -115,7 +115,7 @@ components:
           dataset:'}
       type: Label
       layout_properties: {grid_position: 'DOLITN,SFSEAD'}
-    - name: text_box_2
+    - name: text_box_
       properties: {type: number, placeholder: '1.6'}
       type: TextBox
       layout_properties: {grid_position: 'VHGBXJ,PLHBQZ'}
