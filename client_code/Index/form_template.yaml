@@ -30,6 +30,9 @@ components:
       properties: {}
       type: DropDown
       layout_properties: {grid_position: 'EKTSIO,FZZLBX'}
+      event_bindings: {change: drop_down_1_change}
+      data_bindings:
+      - {property: items, code: 'self.item[''name'']', writeback: false}
     - name: label_2
       properties: {text: Select a OneFS Version}
       type: Label

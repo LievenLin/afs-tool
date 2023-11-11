@@ -13,3 +13,7 @@ class Index(IndexTemplate):
   def button_cal_click(self, **event_args):
     """This method is called when the button is clicked"""
     pass
+
+  def drop_down_1_change(self, **event_args):
+    """This method is called when an item is selected"""
+    pass
