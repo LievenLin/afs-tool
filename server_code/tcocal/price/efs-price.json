@@ -1,0 +1,63 @@
+{
+    "us-east-1" : {
+        "standard_storage" : {
+            "price": 0.3000,
+            "unit": "GiB/month"
+        },
+        "one_zone_storage" : {
+            "price": 0.1600,
+            "unit": "GiB/month"
+        }
+    },
+    "us-east-2" : {
+        "standard_storage" : {
+            "price": 0.3000,
+            "unit": "GiB/month"
+        },
+        "one_zone_storage" : {
+            "price": 0.1600,
+            "unit": "GiB/month"
+        }
+    },
+    "eu-west-1" : {
+        "standard_storage" : {
+            "price": 0.3300,
+            "unit": "GiB/month"
+        },
+        "one_zone_storage" : {
+            "price": 0.1760,
+            "unit": "GiB/month"
+        }
+    },
+    "eu-central-1" : {
+        "standard_storage" : {
+            "price": 0.3600,
+            "unit": "GiB/month"
+        },
+        "one_zone_storage" : {
+            "price": 0.1920,
+            "unit": "GiB/month"
+        }
+    },
+    "ap-southeast-1" : {
+        "standard_storage" : {
+            "price": 0.3600,
+            "unit": "GiB/month"
+        },
+        "one_zone_storage" : {
+            "price": 0.1920,
+            "unit": "GiB/month"
+        }
+    },
+    "ap-northeast-1" : {
+        "standard_storage" : {
+            "price": 0.3600,
+            "unit": "GiB/month"
+        },
+        "one_zone_storage" : {
+            "price": 0.1920,
+            "unit": "GiB/month"
+        }
+    }
+
+}

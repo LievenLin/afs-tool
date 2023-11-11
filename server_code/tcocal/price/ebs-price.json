@@ -1,0 +1,76 @@
+{
+    "us-east-1" : {
+        "gp3": {
+            "capacity_price_hourly": 0.00010959,
+            "thpt_price": 0,
+            "iops_price": 0,
+            "Currency": "USD"
+        },
+        "st1": {
+            "capacity_price_hourly": 0.00006164,
+            "Currency": "USD"
+        }
+    },
+    "us-east-2" : {
+        "gp3": {
+            "capacity_price_hourly": 0.00010959,
+            "thpt_price": 0,
+            "iops_price": 0,
+            "Currency": "USD"
+        },
+        "st1": {
+            "capacity_price_hourly": 0.00006164,
+            "Currency": "USD"
+        }
+    },
+    "eu-west-1" : {
+        "gp3": {
+            "capacity_price_hourly": 0.00012055,
+            "thpt_price": 0,
+            "iops_price": 0,
+            "Currency": "USD"
+        },
+        "st1": {
+            "capacity_price_hourly": 0.00006849,
+            "Currency": "USD"
+        }
+    },
+    "eu-central-1" : {
+        "gp3": {
+            "capacity_price_hourly": 0.00013041,
+            "thpt_price": 0,
+            "iops_price": 0,
+            "Currency": "USD"
+        },
+        "st1": {
+            "capacity_price_hourly": 0.00007397,
+            "Currency": "USD"
+        }
+    },
+    "ap-southeast-1" : {
+        "gp3": {
+            "capacity_price_hourly": 0.00013151,
+            "thpt_price": 0,
+            "iops_price": 0,
+            "Currency": "USD"
+        },
+        "st1": {
+            "capacity_price_hourly": 0.00007397,
+            "Currency": "USD"
+        }
+    },
+    "ap-northeast-1" : {
+        "gp3": {
+            "capacity_price_hourly": 0.00013151,
+            "thpt_price": 0,
+            "iops_price": 0,
+            "Currency": "USD"
+        },
+        "st1": {
+            "capacity_price_hourly": 0.00007397,
+            "Currency": "USD"
+        }
+    }
+
+    
+}
