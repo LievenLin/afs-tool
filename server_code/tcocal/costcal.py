@@ -14,12 +14,12 @@ def load_json_data(path):
 
 # get supported regions based on ec2 price json file
 @anvil.server.callable
-def get_supported_regions():
+def get_supported_regions(onefs_version):
     # assume the price folder is under same dir with the costcal.py
     #ec2_price_path = os.path.dirname(os.path.abspath(__file__)) + r"/price/ec2-price.json"
-    ec2_price_path = anvil.server.get_app_origin() + r"/_/theme/price/ec2-price.json"
-    data = load_json_data(ec2_price_path)
-    supported_regions = [key for key in data]
+    supported_cluster_config_path = anvil.server.get_app_origin() + r"/_/theme/price/supported_cluster_config.json"
+    data = load_json_data(supported_cluster_config_path)
+    supported_regions =  data[onefs_version]["supported-regions"]
     return supported_regions
 
 # get supported instance type based on ec2 price json file and aws region inpu from users
@@ -30,7 +30,7 @@ def get_supported_instance_types(onefs_version, aws_region, disk_type):
     # data = load_json_data(ec2_price_path)
     # supported_instance_types = [key for key in data[aws_region]]
     supported_cluster_config_path = anvil.server.get_app_origin() + r"/_/theme/price/supported_cluster_config.json"
-    data = costcal.load_json_data(supported_cluster_config_path)
+    data = load_json_data(supported_cluster_config_path)
     if disk_type == 'gp3':
       supported_instance_types =  data[onefs_version]['ssd-cluster']['supported-instance-type']
     elif disk_type == 'st1':
