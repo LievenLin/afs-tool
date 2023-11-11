@@ -5,7 +5,10 @@ import anvil.server
 
 # hard coded for now
 @anvil.server.callable
-def get_supported_cluster_node_amount():
+def get_supported_cluster_node_amount(onefs_version):
+    supported_cluster_config_path = anvil.server.get_app_origin() + r"/_/theme/price/supported_cluster_config.json"
+    data = costcal.load_json_data(supported_cluster_config_path)
+    supported_cluster_node_amount = data[onefs_version]
     return ['4', '5', '6']
 
 @anvil.server.callable
