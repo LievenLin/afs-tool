@@ -24,17 +24,14 @@ def get_supported_regions(onefs_version):
 
 # get supported instance type based on ec2 price json file and aws region inpu from users
 @anvil.server.callable
-def get_supported_instance_types(onefs_version, aws_region, disk_type):
+def get_supported_instance_types(onefs_version, aws_region):
     # assume the price folder is under same dir with the costcal.py
     # ec2_price_path = anvil.server.get_app_origin() + r"/_/theme/price/ec2-price.json"
     # data = load_json_data(ec2_price_path)
     # supported_instance_types = [key for key in data[aws_region]]
     supported_cluster_config_path = anvil.server.get_app_origin() + r"/_/theme/price/supported_cluster_config.json"
     data = load_json_data(supported_cluster_config_path)
-    if disk_type == 'gp3':
-      supported_instance_types =  data[onefs_version]['ssd-cluster']['supported-instance-type']
-    elif disk_type == 'st1':
-      supported_instance_types =  data[onefs_version]['hdd-cluster']['supported-instance-type']   
+    supported_instance_types =  data[onefs_version]['supported-instance-type']
     return supported_instance_types
 
 

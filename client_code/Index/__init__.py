@@ -13,7 +13,7 @@ class Index(IndexTemplate):
     self.drop_down_onefs_term.items = ['1-year', '3-years']
     self.drop_down_region.items = anvil.server.call('get_supported_regions', self.drop_down_onefs_version.selected_value)
     self.drop_down_region.placeholder = self.drop_down_region.items[0]
-    self.drop_down_instance_type.items = anvil.server.call('get_supported_instance_types',self.drop_down_region.selected_value)
+    self.drop_down_instance_type.items = anvil.server.call('get_supported_instance_types', self.drop_down_onefs_version.selected_value, self.drop_down_region.selected_value)
     #self.drop_down_instance_type.items = self.show_supported_instance_types()
     self.drop_down_disk_type.items = ['gp3', 'st1']
     self.drop_down_node_amount.items = anvil.server.call('get_supported_cluster_node_amount')
@@ -28,7 +28,7 @@ class Index(IndexTemplate):
     pass
 
   def drop_down_region_change(self, **event_args):
-    self.drop_down_instance_type.items = anvil.server.call('get_supported_instance_types',self.drop_down_region.selected_value)
+    self.drop_down_instance_type.items = anvil.server.call('get_supported_instance_types', self.drop_down_onefs_version.selected_value, self.drop_down_region.selected_value)
 
   def drop_down_onefs_version_change(self, **event_args):
     self.drop_down_instance_type.items = anvil.server.call('get_supported_instance_types',self.drop_down_region.selected_value)
