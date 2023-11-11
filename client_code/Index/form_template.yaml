@@ -47,7 +47,7 @@ components:
       properties: {text: 'Enter a OneFS License Discount Percentage:'}
       type: Label
       layout_properties: {grid_position: 'SENFDH,XQNBMK'}
-    - name: text_box_3
+    - name: text_box_onefs_license_discount
       properties: {type: number, placeholder: '83'}
       type: TextBox
       layout_properties: {grid_position: 'GRAYPU,MDENQY'}
