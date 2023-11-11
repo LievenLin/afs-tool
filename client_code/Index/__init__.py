@@ -18,7 +18,7 @@ class Index(IndexTemplate):
     self.drop_down_node_amount.items = map(str, anvil.server.call('get_supported_cluster_node_amount', self.drop_down_onefs_version.selected_value))
     self.drop_down_disk_type.items = ['gp3', 'st1']    
     self.drop_down_node_disk_amount.items = map(str, anvil.server.call('get_supported_node_disk_amount', self.drop_down_onefs_version.selected_value, self.drop_down_disk_type.selected_value))
-    self.
+    self.tex
     self.drop_down_payment_option.items = ['on-demand', 'saving-plan-3-years-no-upfront']
     self.drop_down_payment_option.placeholder = 'saving-plan-3-years-no-upfront'
   
