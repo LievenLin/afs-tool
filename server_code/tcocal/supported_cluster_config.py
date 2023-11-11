@@ -21,7 +21,7 @@ def get_supported_node_disk_amount(onefs_version, disk_type):
 
 @anvil.server.callable
 def get_supported_node_disk_size(onefs_version, disk_type):
-    supported_cluster_config_path = os.path.dirname(os.path.abspath(__file__)) + r"/price/supported_cluster_config.json"
+    supported_cluster_config_path = anvil.server.get_app_origin() + r"/_/theme/price/supported_cluster_config.json"
     data = costcal.load_json_data(supported_cluster_config_path)
     if disk_type == 'gp3':
         supported_node_disk_size_min =  data[onefs_version]['ssd-cluster']['supported-node-disk-size-min']

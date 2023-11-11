@@ -26,30 +26,30 @@ components:
       properties: {text: 'Select an AWS Region:'}
       type: Label
       layout_properties: {grid_position: 'THVBCE,BWVPGD'}
-    - name: drop_down_1
+    - name: drop_down_region
       properties: {}
       type: DropDown
       layout_properties: {grid_position: 'EKTSIO,FZZLBX'}
-      event_bindings: {change: drop_down_1_change}
+      event_bindings: {change: drop_down_region_change}
       data_bindings: []
     - name: label_2
       properties: {text: Select a OneFS Version}
       type: Label
       layout_properties: {grid_position: 'NVCXBA,QWDUOT'}
-    - name: drop_down_2
+    - name: drop_down_onefs_version
       properties:
         items: ['']
       type: DropDown
       layout_properties: {grid_position: 'OGYDQC,BFTACN'}
       data_bindings:
       - {property: items, code: '', writeback: false}
-      event_bindings: {change: drop_down_2_change}
+      event_bindings: {change: drop_down_onefs_version_change}
     - name: label_3
       properties: {text: 'Select a OneFS License Contract Term (Includes ProSupport
           Plus for APEX File Storage for Public Coud):'}
       type: Label
       layout_properties: {grid_position: 'AUUWCX,UILJGN'}
-    - name: drop_down_3
+    - name: drop_down_onefs_term
       properties: {}
       type: DropDown
       layout_properties: {grid_position: 'ZLWUXI,HQQZKA'}
@@ -65,7 +65,7 @@ components:
       properties: {text: 'Select an instance type:'}
       type: Label
       layout_properties: {grid_position: 'AGFOYU,OCYBAY'}
-    - name: drop_down_4
+    - name: drop_down_instance_type
       properties: {}
       type: DropDown
       layout_properties: {grid_position: 'PGYGNG,LABEEQ'}
@@ -73,16 +73,16 @@ components:
       properties: {text: 'Select a data disk type:'}
       type: Label
       layout_properties: {grid_position: 'TYORVV,TFVTVP'}
-    - name: drop_down_5
+    - name: drop_down_disk_type
       properties: {}
       type: DropDown
       layout_properties: {grid_position: 'HNRODO,SVVYUV'}
-      event_bindings: {change: drop_down_5_change}
+      event_bindings: {change: drop_down_disk_type_change}
     - name: label_7
       properties: {text: 'Select the desired number of nodes in the cluster:'}
       type: Label
       layout_properties: {grid_position: 'BFYKMR,JZEATW'}
-    - name: drop_down_6
+    - name: drop_down_node_amount
       properties: {}
       type: DropDown
       layout_properties: {grid_position: 'LIOSCT,ZQHQPC'}
@@ -90,7 +90,7 @@ components:
       properties: {text: 'Select the desired number of data disks in each node:'}
       type: Label
       layout_properties: {grid_position: 'SODKMP,FCJAIT'}
-    - name: drop_down_7
+    - name: drop_down_node_disk_amount
       properties: {}
       type: DropDown
       layout_properties: {grid_position: 'OHPPCX,KWTGFG'}
