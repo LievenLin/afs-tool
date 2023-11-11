@@ -1,7 +1,13 @@
 unique_ids:
-  forms: {}
-  modules: {}
-  server_modules: {}
+  forms:
+    Index: '1699682241103103271132966.58408'
+  modules:
+    ClientModule1: '1699683454079780402834447.3088'
+    ClientPackage1: '1699683475908812439980804.4185'
+  server_modules:
+    ServerPackage1: '1699683416681361379154475.6138'
+    tcocal: '1699683245601253563503320.16086'
   assets:
+    price_loader.py: '169968338031360410131901.33327'
     standard-page.html: RCMG4SU2U7A2DDOKZ3FPF6UEPOSB4NPZ
     theme.css: LEGUNK5QZ3HWPFWNTG6KOYJ6M4UPYS72

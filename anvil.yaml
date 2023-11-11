@@ -1,6 +1,12 @@
 allow_embedding: false
-package_name: Custom_HTML_1
-name: Custom HTML 1
+package_name: AFS_Tool
+startup: {type: form, module: Index}
+name: AFS-Tool
+startup_form: null
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-services: []
+metadata: {title: AFS Tool}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}

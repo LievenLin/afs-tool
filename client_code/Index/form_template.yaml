@@ -1,0 +1,141 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- name: column_panel_2
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {slot: default}
+  components:
+  - name: rich_text_1
+    properties: {content: '## APEX File Storage for AWS TCO Estimator and Comparison'}
+    type: RichText
+    layout_properties: {grid_position: 'CEWCHY,NXIQQE'}
+- type: ColumnPanel
+  properties: {col_widths: '{"FGJTVF":15,"NYWWLQ":45}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: column_panel_input
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'ALWXWL,FGJTVF', full_width_row: true}
+    components:
+    - name: label_1
+      properties: {text: 'Select an AWS Region:'}
+      type: Label
+      layout_properties: {grid_position: 'THVBCE,BWVPGD'}
+    - name: drop_down_1
+      properties: {}
+      type: DropDown
+      layout_properties: {grid_position: 'EKTSIO,FZZLBX'}
+    - name: label_2
+      properties: {text: Select a OneFS Version}
+      type: Label
+      layout_properties: {grid_position: 'NVCXBA,QWDUOT'}
+    - name: drop_down_2
+      properties: {}
+      type: DropDown
+      layout_properties: {grid_position: 'OGYDQC,BFTACN'}
+    - name: label_3
+      properties: {text: 'Select a OneFS License Contract Term (Includes ProSupport
+          Plus for APEX File Storage for Public Coud):'}
+      type: Label
+      layout_properties: {grid_position: 'AUUWCX,UILJGN'}
+    - name: drop_down_3
+      properties: {}
+      type: DropDown
+      layout_properties: {grid_position: 'ZLWUXI,HQQZKA'}
+    - name: label_4
+      properties: {text: 'Enter a OneFS License Discount Percentage:'}
+      type: Label
+      layout_properties: {grid_position: 'SENFDH,XQNBMK'}
+    - name: drop_down_4
+      properties: {}
+      type: DropDown
+      layout_properties: {grid_position: 'COUYLB,OQKEMH'}
+    - name: label_5
+      properties: {text: 'Select an instance type:'}
+      type: Label
+      layout_properties: {grid_position: 'AGFOYU,OCYBAY'}
+    - name: drop_down_5
+      properties: {}
+      type: DropDown
+      layout_properties: {grid_position: 'LEFPJA,FXUBSA'}
+    - name: label_6
+      properties: {text: 'Select a data disk type:'}
+      type: Label
+      layout_properties: {grid_position: 'TYORVV,TFVTVP'}
+    - name: drop_down_6
+      properties: {}
+      type: DropDown
+      layout_properties: {grid_position: 'LXYIDU,BIISUU'}
+    - name: label_7
+      properties: {text: 'Select the desired number of nodes in the cluster:'}
+      type: Label
+      layout_properties: {grid_position: 'BFYKMR,JZEATW'}
+    - name: drop_down_7
+      properties: {}
+      type: DropDown
+      layout_properties: {grid_position: 'MSSBDC,VYEACM'}
+    - name: label_8
+      properties: {text: 'Select the desired number of data disks in each node:'}
+      type: Label
+      layout_properties: {grid_position: 'SODKMP,FCJAIT'}
+    - name: drop_down_8
+      properties: {}
+      type: DropDown
+      layout_properties: {grid_position: 'NGIMEW,PXDOZR'}
+    - name: label_9
+      properties: {text: 'Select the desired raw size of each data disk. (TiB):'}
+      type: Label
+      layout_properties: {grid_position: 'UEPSNP,DZQZHY'}
+    - name: text_box_1
+      properties: {type: number}
+      type: TextBox
+      layout_properties: {grid_position: 'MKDCYM,EMIRSR'}
+    - name: label_10
+      properties: {text: 'Select an Amazon EC2 payment options:'}
+      type: Label
+      layout_properties: {grid_position: 'DYTOGP,ALAQYT'}
+    - name: drop_down_9
+      properties: {}
+      type: DropDown
+      layout_properties: {grid_position: 'XPXRNZ,HPSZVO'}
+    - name: label_11
+      properties: {text: 'Enter an estimated data reduction ratio of OneFS for customer
+          dataset:'}
+      type: Label
+      layout_properties: {grid_position: 'DOLITN,SFSEAD'}
+    - name: text_box_2
+      properties: {}
+      type: TextBox
+      layout_properties: {grid_position: 'VHGBXJ,PLHBQZ'}
+    - name: button_cal
+      properties: {text: Calculate}
+      type: Button
+      layout_properties: {grid_position: 'MWXAFA,NRELTC'}
+      event_bindings: {click: button_cal_click}
+  - name: column_panel_comparison
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'ALWXWL,NYWWLQ YRLBBF,OCJSEL', full_width_row: true}
+  - name: column_panel_cost_breakdown_table
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'ALWXWL,NYWWLQ HJOADJ,VRKLXN'}
+  - name: column_panel_note
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'ALWXWL,NYWWLQ HVURHU,ESNXRX'}
+- name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {slot: default}
+  components:
+  - name: flow_panel_1
+    properties: {align: right, vertical_align: bottom, spacing: medium}
+    type: FlowPanel
+    layout_properties: {grid_position: 'MQHMRU,QHKUQT'}
+    data_bindings: []
