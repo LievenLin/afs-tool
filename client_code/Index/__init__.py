@@ -8,10 +8,11 @@ class Index(IndexTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.drop_down_region.items = anvil.server.call('get_supported_regions')
-    self.drop_down_region.placeholder = anvil.server.call('get_supported_regions')[0]
+    
     self.drop_down_onefs_version.items = ['OneFS 9.6', 'OneFS 9.7']
     self.drop_down_onefs_term.items = ['1-year', '3-years']
+    self.drop_down_region.items = anvil.server.call('get_supported_regions', self.drop_down_onefs_version.selected_value)
+    self.drop_down_region.placeholder = self.drop_down_region.items[0]
     self.drop_down_instance_type.items = anvil.server.call('get_supported_instance_types',self.drop_down_region.selected_value)
     #self.drop_down_instance_type.items = self.show_supported_instance_types()
     self.drop_down_disk_type.items = ['gp3', 'st1']
