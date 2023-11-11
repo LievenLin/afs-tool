@@ -1,12 +1,13 @@
-allow_embedding: false
-package_name: AFS_Tool
-startup: {type: form, module: Index}
-name: AFS-Tool
-startup_form: null
-runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
-  server_spec: null}
-metadata: {title: AFS Tool}
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
+startup: {type: form, module: Index}
+package_name: AFS_Tool
+allow_embedding: false
+name: AFS-Tool
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
+  server_spec: null}
+metadata: {title: AFS Tool}
+startup_form: null
+db_schema: {}

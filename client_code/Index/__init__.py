@@ -8,7 +8,7 @@ class Index(IndexTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-  
+    self.dropdown_1.items = anvil.server.call('get_supported_regions')
   
   def button_cal_click(self, **event_args):
     """This method is called when the button is clicked"""
