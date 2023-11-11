@@ -1,4 +1,4 @@
-import json
+import anvil.server
 import os
 import json
 
@@ -9,6 +9,7 @@ def load_json_data(path):
     return data
 
 # get supported regions based on ec2 price json file
+@anvil.server.callable
 def get_supported_regions():
     # assume the price folder is under same dir with the costcal.py
     ec2_price_path = os.path.dirname(os.path.abspath(__file__)) + r"/price/ec2-price.json"
