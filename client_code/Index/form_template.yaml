@@ -43,6 +43,7 @@ components:
       layout_properties: {grid_position: 'OGYDQC,BFTACN'}
       data_bindings:
       - {property: items, code: '', writeback: false}
+      event_bindings: {change: drop_down_2_change}
     - name: label_3
       properties: {text: 'Select a OneFS License Contract Term (Includes ProSupport
           Plus for APEX File Storage for Public Coud):'}
@@ -76,6 +77,7 @@ components:
       properties: {}
       type: DropDown
       layout_properties: {grid_position: 'HNRODO,SVVYUV'}
+      event_bindings: {change: drop_down_5_change}
     - name: label_7
       properties: {text: 'Select the desired number of nodes in the cluster:'}
       type: Label

@@ -27,5 +27,13 @@ class Index(IndexTemplate):
     pass
 
   def drop_down_1_change(self, **event_args):
-    """This method is called when an item is selected"""
-    pass
+    self.drop_down_4.items = anvil.server.call('get_supported_instance_types',self.drop_down_1.selected_value)
+
+  def drop_down_2_change(self, **event_args):
+    self.drop_down_4.items = anvil.server.call('get_supported_instance_types',self.drop_down_1.selected_value)
+    self.drop_down_7.items = map(str, anvil.server.call('get_supported_node_disk_amount', self.drop_down_2.selected_value, self.drop_down_5.selected_value))
+  
+  def drop_down_5_change(self, **event_args):
+    self.drop_down_7.items = map(str, anvil.server.call('get_supported_node_disk_amount', self.drop_down_2.selected_value, self.drop_down_5.selected_value))
+
+  
