@@ -3,7 +3,7 @@ from anvil import *
 import plotly.graph_objects as go
 import anvil.server
 from plotly import graph_objects as go
-import plotly.express as px
+
 
 
 class Index(IndexTemplate):
@@ -31,22 +31,8 @@ class Index(IndexTemplate):
   #   return supported_instance_types
   
   def button_cal_click(self, **event_args):
-    platforms = ['OneFS on AWS Annual Costs - USD', 'EFS Standard Storage Annual Costs - USD', 'EFS One Zone Storage Annual Costs - USD']
-    annual_aws_ec2_cost = [100, 0, 0]
-    annual_aws_storage_cost = [0, 200, 0]
-    annual_license_cost = [100, 0, 0]
-    wide_data = pd.DataFrame(
-        {
-            'Platforms': platforms,
-            'Annual AWS Storage Cost - USD': annual_aws_storage_cost,
-            'Annual AWS EC2 Cost - USD': annual_aws_ec2_cost,
-            'Annual License Cost - USD': annual_license_cost
-        }
-    )
+    anvil.server.call('show_comparison_figure')
     
-    wide_df = wide_data
-    fig = px.bar(wide_df, x="Platforms", y=["Annual AWS Storage Cost - USD", "Annual AWS EC2 Cost - USD", "Annual License Cost - USD"], title="Annual Cost Compare to Amazon EFS", text_auto=True)
-
   def drop_down_region_change(self, **event_args):
     self.drop_down_instance_type.items = anvil.server.call('get_supported_instance_types', self.drop_down_onefs_version.selected_value, self.drop_down_region.selected_value)
 
