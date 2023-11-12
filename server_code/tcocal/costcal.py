@@ -70,6 +70,8 @@ def cal_onefs_license_cost_monthly(contract_term, capacity_gib, onefs_license_di
     return total_cost_monthly
 
 def cal_required_cluster_raw_capacity_tib(node_amount, node_disk_amount, node_disk_size):
+    node_amount = int(node_amount)
+    node_disk_amount = int(node_disk_amount)
     return int(node_amount) * int(node_disk_amount) * node_disk_size
 
 def cal_onefs_aws_cost_monthly(aws_region, instance_type, disk_type, node_amount, node_disk_amount, node_disk_size, ec2_payment_option):
