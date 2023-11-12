@@ -40,7 +40,7 @@ def get_supported_instance_types(onefs_version, aws_region):
 
 def cal_ec2_instance_cost_hourly(aws_region, instance_amount, instance_type, payment_option):
     # assume the price folder is under same dir with the costcal.py
-    ec2_price_path = os.path.dirname(os.path.abspath(__file__)) + r"/price/ec2-price.json"
+    ec2_price_path = anvil.server.get_app_origin() + r"/_/theme/price/ec2-price.json"
     print(ec2_price_path)
     data = load_json_data(ec2_price_path)
     print(data)
@@ -49,7 +49,7 @@ def cal_ec2_instance_cost_hourly(aws_region, instance_amount, instance_type, pay
     return total_cost_hourly
 
 def cal_ebs_cost_hourly(aws_region, ebs_type, capacity_gib):
-    ebs_price_path = os.path.dirname(os.path.abspath(__file__)) + r"/price/ebs-price.json"
+    ebs_price_path = anvil.server.get_app_origin() + r"/_/theme/price/ebs-price.json"
     data = load_json_data(ebs_price_path)
     price = data[aws_region][ebs_type]['capacity_price_hourly']
     total_cost_hourly = price * capacity_gib
@@ -58,7 +58,7 @@ def cal_ebs_cost_hourly(aws_region, ebs_type, capacity_gib):
 
 
 def cal_onefs_license_cost_monthly(contract_term, capacity_gib, onefs_license_discount):
-    onefs_license_price_path = os.path.dirname(os.path.abspath(__file__)) + r"/price/onefs-license-price.json"
+    onefs_license_price_path = anvil.server.get_app_origin() + r"/_/theme/price/onefs-license-price.json"
     f = open(onefs_license_price_path)
     data = json.load(f)
     f.close()
@@ -101,7 +101,7 @@ def cal_required_efs_capacity_tib(node_amount, node_disk_amount, node_disk_size,
     return node_amount * node_disk_amount * node_disk_size * usable_perc * onefs_drr_ratio
 
 def cal_efs_cost_monthly(aws_region, storage_type, capacity_gib):
-    efs_price_path = os.path.dirname(os.path.abspath(__file__)) + r"/price/efs-price.json"
+    efs_price_path = anvil.server.get_app_origin() + r"/_/theme/price/efs-price.json"
     data = load_json_data(efs_price_path)
     price = data[aws_region][storage_type]["price"]
     total_cost_monthly = price * capacity_gib
