@@ -34,7 +34,7 @@ class Index(IndexTemplate):
   def button_cal_click(self, **event_args):
     self.plot_comparison.figure = anvil.server.call('show_comparison_figure', self.drop_down_region.selected_value, self.drop_down_onefs_term.selected_value, \
                               self.text_box_onefs_license_discount, self.drop_down_instance_type.selected_value, self.drop_down_disk_type.selected_value, \
-                              self.drop_down_node_amount.selected_value, self.text_box_node_disk_size, self.drop_down_payment_option.selected_value, self.text_box_onefs_drr_ratio)
+                              self.drop_down_node_amount.selected_value, self.drop_down_node_disk_amount.selected_value, self.text_box_node_disk_size, self.drop_down_payment_option.selected_value, self.text_box_onefs_drr_ratio)
   
   def drop_down_region_change(self, **event_args):
     self.drop_down_instance_type.items = anvil.server.call('get_supported_instance_types', self.drop_down_onefs_version.selected_value, self.drop_down_region.selected_value)
