@@ -18,4 +18,5 @@ unique_ids:
     price/ebs-price.json: 76Q3RJSTDROIP66IYHCPL4WDJPHIEN5J
     price/ec2-price.json: SYPGYUSECRFCGLKN44JP3IYXZ5QZ6YX6
     price/efs-price.json: H3JCME5ZW6OI34O47I4AKK6TYVEALFBS
+    price/onefs-license-price.json: '1699759970933335670755210.1781'
     price/supported_cluster_config.json: '1699693129366643025416666.765'
