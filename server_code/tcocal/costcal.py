@@ -59,9 +59,7 @@ def cal_ebs_cost_hourly(aws_region, ebs_type, capacity_gib):
 
 def cal_onefs_license_cost_monthly(contract_term, capacity_gib, onefs_license_discount):
     onefs_license_price_path = anvil.server.get_app_origin() + r"/_/theme/price/onefs-license-price.json"
-    f = open(onefs_license_price_path)
-    data = json.load(f)
-    f.close()
+    data = load_json_data(onefs_license_price_path)
     if contract_term == '1-year':
         price = data[contract_term]['price']/12
     elif contract_term == '3-years':
