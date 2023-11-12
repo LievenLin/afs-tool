@@ -25,9 +25,7 @@ class Index(IndexTemplate):
     self.text_box_node_disk_size.placeholder = 4
     self.drop_down_payment_option.items = ['on-demand', 'saving-plan-3-years-no-upfront']
     self.drop_down_payment_option.placeholder = 'saving-plan-3-years-no-upfront'
-    self.plot_comparison.figure = anvil.server.call('init_comparison_figure', self.drop_down_region.selected_value, self.drop_down_onefs_term.selected_value, \
-                                  self.text_box_onefs_license_discount, self.drop_down_instance_type.selected_value, self.drop_down_disk_type.selected_value, \
-                                  self.drop_down_node_amount.selected_value, self.text_box_node_disk_size, self.drop_down_payment_option.selected_value, self.text_box_onefs_drr_ratio)
+    self.plot_comparison.figure = anvil.server.call('init_comparison_figure')
   
   # def show_supported_instance_types(self):
   #   supported_instance_types = anvil.server.call('get_supported_instance_types',self.drop_down_region.selected_value)
