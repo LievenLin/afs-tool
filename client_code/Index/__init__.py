@@ -32,9 +32,9 @@ class Index(IndexTemplate):
   
   def button_cal_click(self, **event_args):
     platforms = ['OneFS on AWS Annual Costs - USD', 'EFS Standard Storage Annual Costs - USD', 'EFS One Zone Storage Annual Costs - USD']
-    annual_aws_ec2_cost = [0, 0, 0]
-    annual_aws_storage_cost = [0, 0, 0]
-    annual_license_cost = [0, 0, 0]
+    annual_aws_ec2_cost = [100, 0, 0]
+    annual_aws_storage_cost = [0, 200, 0]
+    annual_license_cost = [100, 0, 0]
     wide_data = pd.DataFrame(
         {
             'Platforms': platforms,
