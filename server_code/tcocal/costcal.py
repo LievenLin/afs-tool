@@ -113,11 +113,30 @@ def cal_efs_solution_cost_monthly(aws_region, storage_type, node_amount, node_di
     return efs_solution_cost_monthly
 
 @anvil.server.callable
+def init_comparison_figure():
+  platforms = ['OneFS on AWS Annual Costs - USD', 'EFS Standard Storage Annual Costs - USD', 'EFS One Zone Storage Annual Costs - USD']
+  annual_aws_ec2_cost = [0, 0, 0]
+  annual_aws_storage_cost = [0, 0, 0]
+  annual_license_cost = [0, 0, 0]
+  wide_data = pd.DataFrame(
+      {
+          'Platforms': platforms,
+          'Annual AWS Storage Cost - USD': annual_aws_storage_cost,
+          'Annual AWS EC2 Cost - USD': annual_aws_ec2_cost,
+          'Annual License Cost - USD': annual_license_cost
+      }
+  )
+  
+  wide_df = wide_data
+  fig = px.bar(wide_df, x="Platforms", y=["Annual AWS Storage Cost - USD", "Annual AWS EC2 Cost - USD", "Annual License Cost - USD"], title="Annual Cost Compare to Amazon EFS", text_auto=True)
+  return fig
+
+@anvil.server.callable
 def show_comparison_figure():
   platforms = ['OneFS on AWS Annual Costs - USD', 'EFS Standard Storage Annual Costs - USD', 'EFS One Zone Storage Annual Costs - USD']
-  annual_aws_ec2_cost = [100, 0, 0]
-  annual_aws_storage_cost = [0, 200, 0]
-  annual_license_cost = [100, 0, 0]
+  annual_aws_ec2_cost = [0, 0, 0]
+  annual_aws_storage_cost = [0, 0, 0]
+  annual_license_cost = [0, 0, 0]
   wide_data = pd.DataFrame(
       {
           'Platforms': platforms,

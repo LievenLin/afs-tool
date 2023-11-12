@@ -25,6 +25,7 @@ class Index(IndexTemplate):
     self.text_box_node_disk_size.placeholder = 4
     self.drop_down_payment_option.items = ['on-demand', 'saving-plan-3-years-no-upfront']
     self.drop_down_payment_option.placeholder = 'saving-plan-3-years-no-upfront'
+    self.plot_comparison.figure = anvil.server.call('show_comparison_figure')
   
   # def show_supported_instance_types(self):
   #   supported_instance_types = anvil.server.call('get_supported_instance_types',self.drop_down_region.selected_value)
