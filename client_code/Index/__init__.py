@@ -1,6 +1,9 @@
 from ._anvil_designer import IndexTemplate
 from anvil import *
+import plotly.graph_objects as go
 import anvil.server
+from plotly import graph_objects as go
+
 
 class Index(IndexTemplate):
   def __init__(self, **properties):
@@ -27,8 +30,21 @@ class Index(IndexTemplate):
   #   return supported_instance_types
   
   def button_cal_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    pass
+    # Plot some data 
+    self.plot_comparison.data = [
+      go.Scatter(
+        x = [1, 2, 3],
+        y = [3, 1, 6],
+        marker = dict(
+          color= 'rgb(16, 32, 77)'
+        )
+      ),
+      go.Bar(
+        x = [1, 2, 3],
+        y = [3, 1, 6],
+        name = 'Bar Chart Example'
+      )
+    ]
 
   def drop_down_region_change(self, **event_args):
     self.drop_down_instance_type.items = anvil.server.call('get_supported_instance_types', self.drop_down_onefs_version.selected_value, self.drop_down_region.selected_value)

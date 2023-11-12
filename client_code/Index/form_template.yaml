@@ -128,10 +128,29 @@ components:
     properties: {}
     type: ColumnPanel
     layout_properties: {grid_position: 'ALWXWL,NYWWLQ YRLBBF,OCJSEL', full_width_row: true}
+    components:
+    - name: plot_comparison
+      properties: {}
+      type: Plot
+      layout_properties: {grid_position: 'OJZVRO,RSEGZM'}
+      data_bindings: []
   - name: column_panel_cost_breakdown_table
     properties: {}
     type: ColumnPanel
     layout_properties: {grid_position: 'ALWXWL,NYWWLQ HJOADJ,VRKLXN'}
+    components:
+    - name: data_grid_cost_breakdown
+      properties:
+        columns:
+        - {id: JKSDUP, title: Column 1, data_key: column_1}
+        - {id: VJQQOR, title: Column 2, data_key: column_2}
+        - {id: OJLQEN, title: Column 3, data_key: column_3}
+      type: DataGrid
+      components:
+      - name: repeating_panel_1
+        properties: {item_template: Index.RowTemplate2}
+        type: RepeatingPanel
+      layout_properties: {grid_position: 'NGUIWJ,TSHRQL'}
   - name: column_panel_note
     properties: {}
     type: ColumnPanel
