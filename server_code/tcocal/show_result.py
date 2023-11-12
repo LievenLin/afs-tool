@@ -1,5 +1,5 @@
 import anvil.server
-import costcal
+import tcocal.costcal as costcal
 
 
 
@@ -23,7 +23,6 @@ def init_comparison_figure():
   return fig
 
 @anvil.server.callable
-
 def show_comparison_figure(aws_region, onefs_contract_term, onefs_license_discount, instance_type, disk_type, node_amount, node_disk_amount, node_disk_size, ec2_payment_option, onefs_drr_ratio):
     platforms = ['OneFS on AWS Annual Costs - USD', 'EFS Standard Storage Annual Costs - USD', 'EFS One Zone Storage Annual Costs - USD']
     annual_aws_ec2_cost = [0, 0, 0]
@@ -73,10 +72,6 @@ def show_comparison_figure(aws_region, onefs_contract_term, onefs_license_discou
                         'Annual License Cost - USD': annual_license_cost})
 
     fig = px.bar(wide_data, x="Platforms", y=["Annual AWS Storage Cost - USD", "Annual AWS EC2 Cost - USD", "Annual License Cost - USD"], title="Annual Cost Compare to Amazon EFS", text_auto=True, height=600)
-    # prepare data for result table
-    df = pd.DataFrame(data)
-    cost_table_columns = [{'name': col, 'id': col} for col in df.columns]
-    cost_table_data = df.to_dict('records') 
     print(datetime.datetime.now())
     
-    return fig, cost_table_columns, cost_table_data
+    return fig
